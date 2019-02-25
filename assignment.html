@@ -1,0 +1,213 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Validation Assignment</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.dropotron.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-wide.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+
+
+<script>
+function validateForm() {
+    var x = document.forms["form1"]["name"].value;
+    var z= document.forms["form1"]["password"].value;
+   var S=['!','@','#','$','%','~','`','^','&','*','(',')','_','+','=','-'];
+   var upper=0;
+var lower=0;
+var number=0;
+var special = 0;
+    
+
+    if (x == "") {
+        alert("Name must be filled out");
+        return false;
+    }
+ 
+   else
+{
+ if (z == "") {
+        alert("password must be filled out ");
+        return false;
+    }  
+
+
+if ((z.length >= 6 )&&( z.length <= 12))
+{
+
+var n=z.length;
+           var i;
+            
+              for(i=0;i<z.length;i++)
+          {
+             var xx=z.charAt(i);
+           if((xx>='A')&&(xx<='Z'))
+{
+              upper++;
+           }
+if((xx>='a')&&(xx<='b'))
+{
+              lower++;
+           }
+
+if((xx >=0)&&(xx<=9))
+{
+              number++;
+}
+
+var j;
+             for(j=0;j<S.length;j++)
+                 {
+            if(xx==S[j]){
+               special++;
+              break;
+                }
+              }
+
+
+}
+
+if(upper>0){
+
+if(lower>0){
+
+if(number>0){
+
+if(special>0){
+alert("SUCCESS you will be able to Login !!!");
+        return false;
+}
+else{
+alert("password does not have special characters ");
+        return false;
+}
+}
+else{
+alert("password does not have numbers (0-9)");
+        return false;
+}
+}
+else{
+alert("password does not has lower case letters ");
+        return false;}
+}
+alert("password does not has upper case letters  ");
+        return false;
+}
+else{
+alert("password length  not between 6-12 ");
+        return false;
+}
+
+
+
+
+   }
+
+ 
+}
+</script>
+
+
+
+
+
+
+
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div class="wrapper style1">
+
+				<!-- Header -->
+					<div id="header" class="skel-panels-fixed">
+						<div id="logo">
+							<h1><a href="index.html">VALIDATION ASSIGNMENT</a></h1>
+							<span class="tag">BY-Bhargavi Dogra(151401)</span>
+						</div>
+						<nav id="nav">
+							<ul>
+								<li class="active">Homepage</li>
+								
+							</ul>
+						</nav>
+					</div>
+				<!-- Header -->
+
+				<!-- Page -->
+					<div id="page" class="container">
+						<div class="row">
+						
+							<!-- Content -->
+							<div id="content" class="8u skel-cell-important">
+								<section>
+									<header class="major">
+										<h2>FORM</h2>
+										<span class="byline">Kindly fill the form for 
+
+registration</span>
+									</header>
+									<body>
+
+<form NAME="form1"  onsubmit="return validateForm()" method=post>
+<fieldset>
+Enter your name:&nbsp&nbsp&nbsp&nbsp
+  <input type="text" name="name" placeholder="NAME">
+  <br>
+<br>
+
+Password:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+ <input type="password"  name="password" placeholder="password">
+<br>
+<br>
+<br>
+<input type="SUBMIT"  name="submit" value="submit"> 
+</fieldset> 
+</form>
+</body>
+							</div>
+							
+						</div>
+					</div>
+				<!-- /Page -->
+
+
+	<!-- Main -->
+					<div id="main">
+						<div class="container">
+							<div class="row"> 
+								
+								<!-- Content -->
+								<div class="6u">
+									<section>
+										<ul class="style">
+											<li class="fa fa-wrench">
+												
+					</form>
+				</section>
+			</div>
+		</div>
+	<!-- /Footer -->
+
+	<!-- Copyright -->
+		<div id="copyright">
+			<div class="container"> 
+				
+			</div>
+		</div>
+
+	</body>
+</html>
